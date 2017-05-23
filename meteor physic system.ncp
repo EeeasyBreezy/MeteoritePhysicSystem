@@ -1,0 +1,92 @@
+<Project>
+  <Name>meteor physic system</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>uml</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>SystemSolver</Name>
+        <Access>Public</Access>
+        <Location left="10" top="10" />
+        <Size width="306" height="227" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public float a1</Member>
+        <Member type="Field">public float a2</Member>
+        <Member type="Field">public float density</Member>
+        <Member type="Field">public const float k = 1.209</Member>
+        <Member type="Method">public void System(float[] t, float[] f)</Member>
+        <Member type="Method">public void InitSystemParams(ParameterVector v)</Member>
+        <Member type="Method">public void GetDensityOntHeight(float height)</Member>
+        <Member type="Method">public void SolveSystem()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GeneticAlgorithm</Name>
+        <Access>Public</Access>
+        <Location left="341" top="10" />
+        <Size width="318" height="298" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public List&lt;ParameterVector&gt; argSet</Member>
+        <Member type="Field">public const int SET_SIZE = 200</Member>
+        <Member type="Field">public const float C_S = 0.075</Member>
+        <Member type="Field">public const float CROSSOVER_PROB = 0.9</Member>
+        <Member type="Field">public const float MUTATION_PROB = 0.1</Member>
+        <Member type="Field">public const int INTERATIONS = 25000</Member>
+        <Member type="Method">public void GenerateInitSet()</Member>
+        <Member type="Method">public void MakeCrossover()</Member>
+        <Member type="Method">public void MakeMutation()</Member>
+        <Member type="Method">public void SortByFitness()</Member>
+        <Member type="Method">public void DistributeProbabities()</Member>
+        <Member type="Method">public void SelectParent()</Member>
+        <Member type="Method">public void DistributeProbabilities()</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ParameterVector</Name>
+        <Access>Public</Access>
+        <Location left="669" top="10" />
+        <Size width="374" height="227" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public float a1</Member>
+        <Member type="Field">public float a2</Member>
+        <Member type="Field">public float costFunction</Member>
+        <Member type="Field">public float selectionProbability</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RandomNumberGenerator</Name>
+        <Access>Public</Access>
+        <Location left="10" top="270" />
+        <Size width="306" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public string trueCryptFilename</Member>
+        <Member type="Field">public StreamReader rand</Member>
+        <Member type="Method">public float GetRandomFloat(float lowBound, float topBound)</Member>
+        <Member type="Method">public void GetRandomInt(int lowBound, int highBound)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TrajectoryData</Name>
+        <Access>Public</Access>
+        <Location left="341" top="323" />
+        <Size width="322" height="298" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public static float[] originalHeight</Member>
+        <Member type="Field">public static float[] originalSpeed</Member>
+        <Member type="Field">public static float[] normHeight</Member>
+        <Member type="Field">public static float[] normSpeed</Member>
+        <Member type="Field">public static float[] time</Member>
+        <Member type="Field">public static float[] normTime</Member>
+        <Member type="Field">public static float origInitHeight</Member>
+        <Member type="Field">public static float origInitSpeed</Member>
+        <Member type="Field">public static float origInitTime</Member>
+        <Member type="Field">public static int TICKS_NUMBER = 18</Member>
+        <Member type="Method">public static void ReadData(string timeFile, string heightFile, string speedFile)</Member>
+        <Member type="Method">public static void NormalizeData()</Member>
+        <Member type="Method">public static float CalculateTheDifference(float[] customTrajectory)</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>
